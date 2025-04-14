@@ -7,6 +7,7 @@ RUN apt-get update && \
   gobuster \
   nmap \
   git \
+  seclists \
   tmux \
   && apt-get autoremove -y \
   && apt-get autoclean -y \
