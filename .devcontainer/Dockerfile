@@ -6,6 +6,7 @@ RUN apt-get update && \
   apt-get install -y \
   gobuster \
   nmap \
+  git \
   tmux \
   && apt-get autoremove -y \
   && apt-get autoclean -y \
