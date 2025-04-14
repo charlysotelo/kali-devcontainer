@@ -1,0 +1,4 @@
+{
+  "name": "kali-container",
+  "build": {"dockerfile": "Dockerfile"}
+}
