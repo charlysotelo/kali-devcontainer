@@ -9,8 +9,9 @@ RUN apt-get update && \
   curl \
   git \
   seclists \
-  tmux \
-  && apt-get autoremove -y \
-  && apt-get autoclean -y \
-  && rm -rf /var/lib/apt/lists/*
+  tmux
+ # tmux \
+ # && apt-get autoremove -y \
+ # && apt-get autoclean -y \
+ # && rm -rf /var/lib/apt/lists/*
 
