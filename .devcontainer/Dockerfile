@@ -24,11 +24,16 @@ RUN chmod a+r /etc/apt/keyrings/docker.asc
 # Add the repository to Apt sources:
 RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian bookworm stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
 RUN apt-get -y update
-RUN apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+RUN apt-get -y install docker-ce-cli
+# If you want DnD
+#RUN apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 RUN DIVE_VERSION=$(curl -sL "https://api.github.com/repos/wagoodman/dive/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/') && \
   curl -fOL "https://github.com/wagoodman/dive/releases/download/v${DIVE_VERSION}/dive_${DIVE_VERSION}_linux_amd64.deb" && \
   apt install -y ./dive_${DIVE_VERSION}_linux_amd64.deb
+
+RUN touch /root/.hushlogin
 
  # tmux \
  # && apt-get autoremove -y \
