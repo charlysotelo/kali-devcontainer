@@ -11,7 +11,7 @@ RUN apt-get update && \
   seclists \
   tmux
 
-RUN apt install zsh
+RUN apt install -y zsh
 RUN chsh -s /usr/bin/zsh root
 
 
