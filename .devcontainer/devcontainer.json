@@ -2,6 +2,8 @@
   "name": "kali-container",
   "build": {"dockerfile": "Dockerfile"},
   "features": {
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1.6.3": {}
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1.6.3": {
+      "moby": false
+    }
   }
 }
