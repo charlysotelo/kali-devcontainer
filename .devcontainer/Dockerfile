@@ -35,6 +35,7 @@ RUN DIVE_VERSION=$(curl -sL "https://api.github.com/repos/wagoodman/dive/release
 
 RUN touch /root/.hushlogin
 
+RUN apt-get -y install hydra
  # tmux \
  # && apt-get autoremove -y \
  # && apt-get autoclean -y \
